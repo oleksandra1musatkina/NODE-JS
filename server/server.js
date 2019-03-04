@@ -1,10 +1,9 @@
-var express = require('express');
-var app = express();
-var fs = require("fs");
+let express = require('express');
+let app = express();
 
-var bodyParser = require('body-parser')
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+let bodyParser = require('body-parser')
+app.use( bodyParser.json() );     
+app.use(bodyParser.urlencoded({  
     extended: true
 }));
 
@@ -22,8 +21,8 @@ app.post('/checkSPZ', function (req, res) {
     res.end();
 })
 
-var server = app.listen(8081, function () {
-   var host = server.address().address
-   var port = server.address().port
+let server = app.listen(8081, function () {
+   let host = server.address().address
+   let port = server.address().port
    console.log("SPZ check", host, port)
 })
